@@ -4,6 +4,9 @@ import viteLogo from './assets/vite.svg';
 import heroImg from './assets/hero.png';
 import './App.css';
 import ProductCard from './components/ProductCard';
+import Header from './components/Header';
+
+import Footer from './components/Footer';
 
 function App() {
   const products = [
@@ -42,15 +45,40 @@ function App() {
 
   return (
     <>
+      <Header />
+
       <div className="my-5">
         <div className="container">
           <div className="row">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product}>
+                {product.id === 1 && (
+                  <div>
+                    <h4>Recensioni</h4>
+                    <p>125 Recensioni</p>
+                  </div>
+                )}
+
+                {product.id === 2 && (
+                  <div>
+                    <h4>Recensioni</h4>
+                    <p>10 Recensioni</p>
+                  </div>
+                )}
+
+                {product.id === 3 && (
+                  <div>
+                    <h4>Recensioni</h4>
+                    <p>40 Recensioni</p>
+                  </div>
+                )}
+              </ProductCard>
             ))}
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }
