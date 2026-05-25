@@ -7,6 +7,7 @@ import ProductCard from './components/ProductCard';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Counter from './components/Counter';
+import ToggleVisible from './components/ToggleVisible';
 
 function App() {
   const products = [
@@ -51,6 +52,8 @@ function App() {
         <div className="container">
           <div className="row">
             <Counter />
+
+            <ToggleVisible />
 
             {products.map((product) => (
               <ProductCard key={product.id} product={product}>
