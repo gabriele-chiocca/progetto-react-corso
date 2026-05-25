@@ -5,8 +5,8 @@ import heroImg from './assets/hero.png';
 import './App.css';
 import ProductCard from './components/ProductCard';
 import Header from './components/Header';
-
 import Footer from './components/Footer';
+import Counter from './components/Counter';
 
 function App() {
   const products = [
@@ -50,6 +50,8 @@ function App() {
       <div className="my-5">
         <div className="container">
           <div className="row">
+            <Counter />
+
             {products.map((product) => (
               <ProductCard key={product.id} product={product}>
                 {product.id === 1 && (
